@@ -1,0 +1,120 @@
+$background-color: white;
+$min-height: 100vh;
+$min-width: 100vw;
+$display: flex;
+$flex-direction: column;
+$align-items: center;
+$justify-content: center;
+$font-size: calc(10px + 2vmin);
+$font-family: 'Orbitron', sans-serif;
+$color: black;
+$text-align: center;
+$margin: 0%;
+$border: 1px black solid;
+$border-radius: 10px;
+
+.Javascript-calculator {
+  display: $display;
+  flex-direction: $flex-direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  background-color: $background-color;
+  min-height: $min-height;
+  min-width: $min-width;
+  font-size: $font-size;
+  font-family: $font-family;
+  color: $color;
+  text-align: $text-align;
+  margin: $margin;
+}
+
+.Calculator-frame {
+  margin: $margin + 7%;
+  height: 50%;
+  width: 30%;
+  background-color: black;
+  border: 1px black solid;
+  border-radius: 10px;
+}
+
+#display {
+  margin: 5%;
+  height: auto;
+  width: auto;
+  word-wrap: break-word;
+  font-size: $font-size;
+  text-align: right;
+  padding: 5%;
+  border: $border;
+  border-radius: $border-radius;
+  background-color: lightgrey;
+}
+
+#clear { grid-area: ButtonClear; }
+#divide { grid-area: Button-divide; }
+#multiply { grid-area: Button-multiply; }
+#seven { grid-area: Button7; }
+#eight { grid-area: Button8; }
+#nine { grid-area: Button9; }
+#subtract { grid-area: Button-subtract; }
+#four { grid-area: Button4; }
+#five { grid-area: Button5; }
+#six { grid-area: Button6; }
+#add { grid-area: Button-plus; }
+#one { grid-area: Button1; }
+#two { grid-area: Button2; }
+#three { grid-area: Button3; }
+#equals { grid-area: Button-equal; }
+#zero { grid-area: Button0; }
+#decimal { grid-area: Button-decimal; }
+
+.Buttons {
+  display: grid;
+  grid-template-areas:
+    'ButtonClear ButtonClear Button-divide Button-multiply'
+    'Button7 Button8 Button9 Button-subtract'
+    'Button4 Button5 Button6 Button-plus'
+    'Button1 Button2 Button3 Button-equal'
+    'Button0 Button0 Button-decimal Button-equal';
+  grid-gap: 10px;
+  padding: 10px;
+  font-size: $font-size;
+  border: $border;
+  border-radius: 0px 0px 10px 10px;
+}
+
+footer {
+  margin: auto;
+  height: 5vh;
+  text-align: center;
+}
+
+footer p {
+  font-size: 18px;
+}
+
+footer p a {
+  text-decoration: none;
+  color: $color;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+    color: $color;
+  }
+}
+
+/* Media queries for phones */
+@media only screen and (min-width: 240px) and (max-width: 480px) {
+  .Calculator-frame { margin: 1%; height: 80%; width: 100%; }
+  .Buttons { grid-gap: 2px; padding: 8px; } 
+  footer { margin: 5%; }
+  footer p { font-size: 14px; }
+} 
+
+/* Media queries for tablets */
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+  .Calculator-frame { margin: 5%; height: 60%; width: 80%; }
+  .Buttons { grid-gap: 5px; padding: 8px; }
+  footer { margin: 5%; }
+  footer p { font-size: 16px; }
+}
