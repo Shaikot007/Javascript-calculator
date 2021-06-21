@@ -1,7 +1,7 @@
 import React from 'react';
 import './Javascript-calculator.scss';
 import { Button } from 'reactstrap';
- 
+
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
@@ -9,10 +9,11 @@ class Calculator extends React.Component {
       inputValue: "0",
     };
   }
+
   // For input numbers
   handleChange = (event) => {
     if ((/([^.0-9]0)$/).test(this.state.inputValue) === true) {
-      this.setState( {
+      this.setState({
         inputValue: this.state.inputValue.slice(0, -1) + event.target.value
       });
     }
@@ -26,11 +27,12 @@ class Calculator extends React.Component {
         inputValue: (this.state.inputValue + event.target.value).replace(/^0+/, '')
       });
     }
-  }
+  };
+
   // For input zero
   handleZero = (event) => {
     if ((/([^.0-9]0)$/).test(this.state.inputValue) === true) {
-      this.setState( {
+      this.setState({
         inputValue: (this.state.inputValue + event.target.value).slice(0, -1)
       });
     }
@@ -39,7 +41,8 @@ class Calculator extends React.Component {
         inputValue: (this.state.inputValue + event.target.value).replace(/^0+/, '0')
       });
     }
-  }
+  };
+
   // For input decimal
   handleDecimal = (event) => {
     const value = event.target.value;
@@ -57,7 +60,8 @@ class Calculator extends React.Component {
         }
       });
     }
-  }
+  };
+
   // For input operators
   handleOperator = (event) => {
     const value = event.target.value;
@@ -71,7 +75,7 @@ class Calculator extends React.Component {
     else if ((/[\.]$/).test(this.state.inputValue) === true) {
       this.setState((state) => {
         return {
-          inputValue: state.inputValue + "0" + value 
+          inputValue: state.inputValue + "0" + value
         }
       });
     }
@@ -101,26 +105,29 @@ class Calculator extends React.Component {
         }
       });
     }
-  }
+  };
+
   // For input value clear
   handleClear = () => {
     this.setState({
       inputValue: "0",
     });
-  }
+  };
+
   // For input value calculation
   handleCalculate = () => {
     if ((/[*+-/]$/).test(this.state.inputValue) === true) {
-      this.setState( {
+      this.setState({
         inputValue: eval(this.state.inputValue.slice(0, -1))
       });
     }
     else {
-      this.setState( {
+      this.setState({
         inputValue: eval(this.state.inputValue)
       });
     }
-  }
+  };
+
   render() {
     return (
       <div className="Javascript-calculator">
@@ -154,6 +161,6 @@ class Calculator extends React.Component {
       </div>
     );
   }
-}
+};
 
 export default Calculator;

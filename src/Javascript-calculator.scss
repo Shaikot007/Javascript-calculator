@@ -106,10 +106,10 @@ footer p a {
 /* Media queries for phones */
 @media only screen and (min-width: 240px) and (max-width: 480px) {
   .Calculator-frame { margin: 1%; height: 80%; width: 100%; }
-  .Buttons { grid-gap: 2px; padding: 8px; } 
+  .Buttons { grid-gap: 2px; padding: 8px; }
   footer { margin: 5%; }
   footer p { font-size: 14px; }
-} 
+}
 
 /* Media queries for tablets */
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
